@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhân viên</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .actions button {
+            padding: 0.3rem 0.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+        .actions .delete {
+            background: #dc3545;
+            color: #fff;
+        }
+        .actions .edit {
+            background: #ffc107;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Quản lý nhân viên</h1>
+    <form id="employeeForm">
+        <div class="form-group">
+            <input type="text" class="form-control" id="account" placeholder="Tài khoản" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="fullName" placeholder="Họ tên" required>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Mật khẩu" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="workingDay" placeholder="Ngày làm (mm/dd/yyyy)" required>
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" id="basicSalary" placeholder="Lương cơ bản" required>
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="position" required>
+                <option value="">Chọn chức vụ</option>
+                <option value="Giám đốc">Giám đốc</option>
+                <option value="Trưởng Phòng">Trưởng Phòng</option>
+                <option value="Nhân Viên">Nhân Viên</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" id="workingHours" placeholder="Giờ làm trong tháng" required>
+        </div>
+        <button type="button" class="btn btn-primary" id="btnAddEmployee">Thêm nhân viên</button>
+        <button type="button" class="btn btn-warning" id="btnUpdateEmployee">Cập nhật nhân viên</button>
+    </form>
+
+    <input type="text" id="searchClassification" placeholder="Tìm nhân viên theo loại">
+    <button type="button" class="btn btn-info" id="btnSearchEmployee">Tìm</button>
+
+    <table class="table table-bordered table-hover myTable">
+        <thead class="text-primary">
+            <tr>
+                <th>Tài khoản</th>
+                <th>Họ và tên</th>
+                <th>Email</th>
+                <th>Ngày làm</th>
+                <th>Chức vụ</th>
+                <th>Tổng lương</th>
+                <th>Xếp loại</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable">
+            <!-- Employee rows will be added here dynamically -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
